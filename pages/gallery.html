@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Community Moments | Codegnan Gallery">
+    <title>Gallery | Codegnan Community</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-container {
+            column-count: 3;
+            column-gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-container {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-container {
+                column-count: 1;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            border-radius: 32px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.8s var(--ease-out);
+            filter: saturate(0.85);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--brand-primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08) rotate(1deg);
+            filter: saturate(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 65%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2.5rem;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-out);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-info h4 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            transform: translateY(15px);
+            transition: transform 0.4s var(--ease-out);
+        }
+
+        .gallery-item:hover .gallery-info h4 {
+            transform: translateY(0);
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.96);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            cursor: zoom-out;
+            backdrop-filter: blur(12px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 20px;
+            transform: scale(0.9);
+            transition: transform 0.4s var(--ease-out);
+            box-shadow: 0 0 100px rgba(99, 102, 241, 0.2);
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="organizer_logo.png" alt="Codegnan Community Hub" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="offline-workshops.html" class="nav-link">Offline Workshops</a></li>
+                <li><a href="online-workshops.html" class="nav-link">Online Workshops</a></li>
+                <li><a href="bootcamps.html" class="nav-link">Bootcamps</a></li>
+                <li><a href="hackathons.html" class="nav-link">Hackathons</a></li>
+                <li><a href="saps.html" class="nav-link">SAPs</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="navbar-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">The Hub in Focus</div>
+            <h1 class="hero-title">
+                <span>Capturing Moments of</span><br>
+                <span class="accent">Growth & Innovation.</span>
+            </h1>
+            <p class="hero-description">
+                Glimpses into our vibrant community, intensive workshops, and high-energy hackathons where ideas come to
+                life.
+            </p>
+            <div class="hero-actions">
+                <a href="#gallery" class="btn btn-primary">View Moments ↓</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section id="gallery" class="section">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Visual Journey</span>
+                <h2 class="section-title">A community that builds together</h2>
+            </div>
+
+            <div class="gallery-container">
+                <!-- Image 1 -->
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600"
+                        alt="Code Workshop">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Workshop Session</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Solving complex problems
+                                together.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600"
+                        alt="Team Work">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Hackathon Finals</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">The final push before the demo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+                        alt="Student Presentation">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Pitch Presentation</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Presenting bold ideas to the
+                                jury.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600"
+                        alt="Group Discussion">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Mentorship</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Learning from the best in
+                                industry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600"
+                        alt="Event Hall">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Networking Event</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Connecting students with talent
+                                partners.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600"
+                        alt="Working Late">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Late Night Building</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Grit and passion at 3 AM.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Codegnan Community. All rights reserved.</p>
+            <a href="index.html" class="logo">
+                <img src="organizer_logo.png" alt="Codegnan Community Hub" class="logo-img" style="height: 32px;">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Zoomed view">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>

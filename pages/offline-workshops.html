@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Offline Workshops | Codegnan Community">
+    <title>Offline Workshops | Codegnan Community</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="organizer_logo.png" alt="Codegnan Community Hub" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="offline-workshops.html" class="nav-link">Offline Workshops</a></li>
+                <li><a href="online-workshops.html" class="nav-link">Online Workshops</a></li>
+                <li><a href="bootcamps.html" class="nav-link">Bootcamps</a></li>
+                <li><a href="hackathons.html" class="nav-link">Hackathons</a></li>
+                <li><a href="saps.html" class="nav-link">SAPs</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="navbar-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">In-Person Excellence</div>
+            <h1 class="hero-title">
+                <span>Hands-on Technical</span><br>
+                <span class="accent">Campus Workshops.</span>
+            </h1>
+            <p class="hero-description">
+                Experience the power of offline learning. Intensive, peer-led sessions conducted at campuses across
+                India, designed for maximum practical impact.
+            </p>
+            <div class="hero-actions">
+                <a href="#upcoming" class="btn btn-primary">Find a Session ↓</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Upcoming Workshops -->
+    <section id="upcoming" class="section">
+        <div class="section-container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <div class="section-header reveal" style="margin-bottom: 0;">
+                    <span class="section-eyebrow">New Horizons</span>
+                    <h2 class="section-title">Upcoming Offline Sessions</h2>
+                    <p class="section-text">Join the tech movement in your city. Hands-on sessions led by industry
+                        experts.</p>
+                </div>
+                <div class="scroll-nav reveal" style="display: flex; gap: 1rem;">
+                    <button id="prevBtn" class="theme-toggle-btn"
+                        style="border-radius: 12px; width: 48px; height: 48px;">←</button>
+                    <button id="nextBtn" class="theme-toggle-btn"
+                        style="border-radius: 12px; width: 48px; height: 48px;">→</button>
+                </div>
+            </div>
+
+            <div class="scroll-container">
+                <div id="upcoming-workshops-grid" class="scroll-wrapper">
+                    <!-- Workshops will be injected via script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Previous Workshops -->
+    <section id="previous" class="section">
+        <div class="section-container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <div class="section-header reveal" style="margin-bottom: 0;">
+                    <span class="section-eyebrow">The Legacy</span>
+                    <h2 class="section-title">Previously Conducted</h2>
+                    <p class="section-text">A look back at some of our most impactful workshops across various campuses.
+                    </p>
+                </div>
+                <div class="scroll-nav reveal" style="display: flex; gap: 1rem;">
+                    <button id="prevPrevBtn" class="theme-toggle-btn"
+                        style="border-radius: 12px; width: 48px; height: 48px;">←</button>
+                    <button id="nextPrevBtn" class="theme-toggle-btn"
+                        style="border-radius: 12px; width: 48px; height: 48px;">→</button>
+                </div>
+            </div>
+
+            <div class="scroll-container">
+                <div id="previous-workshops-grid" class="scroll-wrapper">
+                    <!-- Previous workshops will be injected via script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Codegnan Community. All rights reserved.</p>
+            <a href="index.html" class="logo">
+                <img src="organizer_logo.png" alt="Codegnan Community Hub" class="logo-img" style="height: 32px;">
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

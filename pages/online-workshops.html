@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Workshops | Codegnan Community">
+    <title>Online Workshops | Codegnan Community</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="organizer_logo.png" alt="Codegnan Community Hub" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="offline-workshops.html" class="nav-link">Offline Workshops</a></li>
+                <li><a href="online-workshops.html" class="nav-link">Online Workshops</a></li>
+                <li><a href="bootcamps.html" class="nav-link">Bootcamps</a></li>
+                <li><a href="hackathons.html" class="nav-link">Hackathons</a></li>
+                <li><a href="saps.html" class="nav-link">SAPs</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="navbar-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">Global Access</div>
+            <h1 class="hero-title">
+                <span>Interactive Virtual</span><br>
+                <span class="accent">Tech Masterclasses.</span>
+            </h1>
+            <p class="hero-description">
+                Learn from the best, from anywhere in the world. High-quality live sessions with interactive labs and
+                community support.
+            </p>
+            <div class="hero-actions">
+                <a href="#sessions" class="btn btn-primary">Browse Masterclasses ↓</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Online Grid -->
+    <section id="sessions" class="section">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Digital Learning Hub</span>
+                <h2 class="section-title">Upgrade your skills on-demand</h2>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Masterclass 1 -->
+                <div class="card reveal">
+                    <div class="card-icon">⚡</div>
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                        <span
+                            style="padding: 0.4rem 0.8rem; background: rgba(34, 197, 94, 0.1); color: #22c55e; border-radius: 100px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(34,197,94,0.2);">FREE</span>
+                        <span
+                            style="padding: 0.4rem 0.8rem; background: rgba(99, 102, 241, 0.1); color: var(--brand-primary); border-radius: 100px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(99,102,241,0.2);">LIVE</span>
+                    </div>
+                    <h3 class="card-title">Gen-AI Mastery</h3>
+                    <p class="card-text">Building LLM-powered applications. Master Prompt Engineering and API
+                        integrations in this crash course.</p>
+                    <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                        <p style="font-size: 0.95rem; color: var(--text-muted);"><span
+                                style="color: var(--text-main); font-weight: 600;">Platform:</span> Zoom / Discord</p>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem;"><span
+                                style="color: var(--text-main); font-weight: 600;">Time:</span> Sat, 6 PM IST</p>
+                        <a href="contact.html" class="btn btn-primary"
+                            style="width: 100%; justify-content: center;">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Masterclass 2 -->
+                <div class="card reveal">
+                    <div class="card-icon">☁️</div>
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                        <span
+                            style="padding: 0.4rem 0.8rem; background: rgba(99, 102, 241, 0.1); color: var(--brand-primary); border-radius: 100px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(99,102,241,0.2);">PREMIUM</span>
+                    </div>
+                    <h3 class="card-title">Cloud Architecture</h3>
+                    <p class="card-text">Scaling applications on AWS. Deep dive into S3, EC2, and Serverless
+                        technologies for modern dev.</p>
+                    <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                        <p style="font-size: 0.95rem; color: var(--text-muted);"><span
+                                style="color: var(--text-main); font-weight: 600;">Platform:</span> Codegnan LMS</p>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem;"><span
+                                style="color: var(--text-main); font-weight: 600;">Access:</span> Lifetime</p>
+                        <a href="contact.html" class="btn btn-secondary"
+                            style="width: 100%; justify-content: center;">View Course</a>
+                    </div>
+                </div>
+
+                <!-- Masterclass 3 -->
+                <div class="card reveal">
+                    <div class="card-icon">📱</div>
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                        <span
+                            style="padding: 0.4rem 0.8rem; background: rgba(168, 85, 247, 0.1); color: var(--brand-secondary); border-radius: 100px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(168,85,247,0.2);">POPULAR</span>
+                    </div>
+                    <h3 class="card-title">React Native Dev</h3>
+                    <p class="card-text">Building cross-platform mobile apps. One codebase for iOS and Android using
+                        modern React hooks.</p>
+                    <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                        <p style="font-size: 0.95rem; color: var(--text-muted);"><span
+                                style="color: var(--text-main); font-weight: 600;">Platform:</span> Microsoft Teams</p>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem;"><span
+                                style="color: var(--text-main); font-weight: 600;">Starts:</span> March 20, 2026</p>
+                        <a href="contact.html" class="btn btn-primary"
+                            style="width: 100%; justify-content: center;">Book Slot</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Codegnan Community. All rights reserved.</p>
+            <a href="index.html" class="logo">
+                <img src="organizer_logo.png" alt="Codegnan Community Hub" class="logo-img" style="height: 32px;">
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
